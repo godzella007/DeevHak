@@ -12,7 +12,7 @@ RUN npm install --legacy-peer-deps
 
 # Copy the current directory contents into the container at /usr/src/app
 COPY . .
-ENV REACT_APP_baseAPIURL=http://20.204.237.134:5000
+
 # Build the app
 RUN npm run build
 
