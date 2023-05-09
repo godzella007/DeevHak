@@ -14,7 +14,6 @@ const Profile = () => {
 
 <div className="container mt-3">
 <div className="content-body">
-
 <div class="row">
 <div class="col-lg-12">
     <div class="profile card card-body px-3 pt-3 pb-0">

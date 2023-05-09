@@ -6,17 +6,18 @@ const EditProfile  = () => {
 
   if (!currentUser) {
     return <Navigate to="/login" />;
+	
   }
 
   return (
     <>
-   <div className="content-body">
-
+<div className="content-body">
+<div class="container-fluid">
         <div className="row">
         <div class="col-xl-9 col-lg-8">
 						<div class="card profile-card card-bx m-b30">
 							<div class="card-header">
-								<h6 class="title">Account setup</h6>
+								<h6 class="title">Update Account </h6>
 							</div>
 							<form class="profile-form">
 								<div class="card-body">
@@ -48,6 +49,8 @@ const EditProfile  = () => {
 						</div>
 					</div>
         </div>
+		</div>
+	
       </div>
   
   

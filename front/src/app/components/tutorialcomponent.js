@@ -160,8 +160,7 @@ class Tutorial extends Component {
       .unwrap()
       .then((reponse) => {
         console.log(reponse);
-        
-        this.setState({ message: "The tutorial was updated successfully!" });
+        this.setState({ message: "The Project was updated successfully!" });
       })
       .catch((e) => {
         console.log(e);

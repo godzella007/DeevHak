@@ -1,6 +1,11 @@
 
 import React, { Component } from "react";
+import Grid from '@mui/material/Grid';
+import Paper from '@mui/material/Paper';
+import Typography from '@mui/material/Typography';
+import ButtonBase from '@mui/material/ButtonBase';
 import { connect } from "react-redux";
+import { styled } from '@mui/material/styles';
 import {
   retrieveTutorials,
   findTutorialsByTitle,
@@ -71,71 +76,70 @@ class Hackathons extends Component {
   render() {
     const { searchTitle, currentTutorial, currentIndex } = this.state;
     const { tutorials } = this.props;
-
+    const Img = styled('img')({
+      margin: 'auto',
+      display: 'block',
+      maxWidth: '100%',
+      maxHeight: '100%',
+    });
     return (
       <div className="content-body">
-      <div className="list row">
-        <div className="col-md-8">
-          <div className="input-group mb-3">
-            <input
-              type="text"
-              className="form-control"
-              placeholder="Search by title"
-              value={searchTitle}
-              onChange={this.onChangeSearchTitle}
-            />
-            <div className="input-group-append">
-              <button
-                className="btn btn-outline-secondary"
-                type="button"
-                onClick={this.findByTitle}
-              >
-                Search
-              </button>
-            </div>
-          </div>
-        </div>
-        <div className="col-md-6">
-          <h4>List de ajouter </h4>
-
-          <ul className="list-group">
-            {tutorials &&
-              tutorials.map((tutorial, index) => (
-                <li
-                  className={
-                    "list-group-item " +
-                    (index === currentIndex ? "active" : "")
-                  }
-                  onClick={() => this.setActiveTutorial(tutorial, index)}
-                  key={index}
-                >
-                  {tutorial.title}
-                </li>
-              ))}
-          </ul>
-          <div className="col-md-6">
-          {currentTutorial ? (
-           <div>
-           <Link
-             to={"/FormolairAcces" + currentTutorial.id}
-             className="badge badge-warning"
-           >
-            view
-           </Link>
-         </div>
-         
-       ) : (
-         <div>
-           <br />
-           <p>Please click on a Projet.</p>
-         </div>
-       )}
-     </div>
-         
-        </div>
-       
-       
-   </div></div>
+        <div class="container-fluid">
+      <Paper
+      sx={{
+        p: 2,
+        margin: 'auto',
+        maxWidth: 500,
+        flexGrow: 1,
+        backgroundColor: (theme) =>
+          theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
+      }}
+    >
+      {tutorials &&
+              tutorials.map((tutorial) => (
+      <Grid container spacing={2}>
+        <Grid item>
+          <ButtonBase sx={{ width: 128, height: 128 }}>
+            <Img alt="complex" src="/images/card/2.png" />
+          </ButtonBase>
+        </Grid>
+        <td> </td>
+															
+																<td>{tutorial.Numbre_Equipe}</td>
+                              
+                                
+        <Grid item xs={12} sm container>
+          <Grid item xs container direction="column" spacing={2}>
+            <Grid item xs>
+              <Typography gutterBottom variant="subtitle1" component="div">
+              {tutorial.title}
+              </Typography>
+              <Typography variant="body2" gutterBottom>
+              {tutorial.NomEntriprise}
+              </Typography>
+              <Typography variant="body2" color="text.secondary">
+              {tutorial.description}
+              </Typography>
+            </Grid>
+            <Grid item>
+              <Typography sx={{ cursor: 'pointer' }} variant="body2">
+              <Link to={"/formulair"}  className="dropdown-item ai-icon">
+													
+                         ouvrir
+   
+                         </Link>
+              </Typography>
+            </Grid>
+          </Grid>
+          <Grid item>
+            <Typography variant="subtitle1" component="div">
+            {tutorial.Date_début}
+             {tutorial.Date_fin}
+            </Typography>
+          </Grid>
+        </Grid>
+      </Grid>	  ))}
+    </Paper></div></div>
  );
 }
 

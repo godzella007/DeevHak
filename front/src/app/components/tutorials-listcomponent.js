@@ -101,8 +101,7 @@ class TutorialsList extends Component {
 						<li className="breadcrumb-item active"><a href="">list</a></li>
 					</ol>
                 </div>
-
-                <div className="container-fluid">   
+ <div className="container-fluid">   
    <div className="element-area">
 					<div className="demo-view">
 						<div className="container-fluid pt-0 ps-0 pe-lg-0 pe-0">
@@ -132,8 +131,6 @@ class TutorialsList extends Component {
         </div>
 								
 								</div>
-							   
-								
 									<div className="tab-content" id="myTabContent-2">
 										<div className="tab-pane fade show active" id="withoutSpace" role="tabpanel" aria-labelledby="home-tab-2">
 											 <div className="card-body pt-0">
@@ -167,7 +164,7 @@ class TutorialsList extends Component {
 																<td>
 																	<div className="d-flex">
 																		<Link to={"/tutorials/" + tutorial.id} className="btn btn-primary shadow btn-xs sharp me-1"><i className="fas fa-pencil-alt"></i></Link>
-                                    <button  onClick={()=>{this.removeTutorial(tutorial.id)}} className="btn btn-danger shadow btn-xs sharp" ><i className="fa fa-trash"></i></button>
+               <button  onClick={()=>{this.removeTutorial(tutorial.id)}} className="btn btn-danger shadow btn-xs sharp" ><i className="fa fa-trash"></i></button>
 																	</div>												
 																</td>		
                      									
@@ -181,18 +178,15 @@ class TutorialsList extends Component {
 										</div>
 									
 									</div>
-							
-							   
 							</div>
 						</div>
                    
-            </div>   				</div>       
-                
+            </div>   				
 
 
 </div>
       
-  </div></div>
+  </div></div></div>
 
    </>
       

@@ -102,7 +102,8 @@ class ListeAdmin extends Component {
       </ol>
             </div>
 
-            <div className="container-fluid">   
+            <div className="container-fluid">  
+             
 <div className="element-area">
       <div className="demo-view">
         <div className="container-fluid pt-0 ps-0 pe-lg-0 pe-0">
@@ -171,20 +172,12 @@ class ListeAdmin extends Component {
 															</div>
 															<div class="dropdown-menu dropdown-menu-end">
                               <div class="col-xl-3 col-xxl-4 col-lg-4 col-md-6">
-                        <div class="card">
-                            <div class="card-body">
-                                <h4 class="card-title">Sweet Success</h4>
-                                <div class="card-content">
-                                    <div class="sweetalert">
-                                        <button class="btn btn-success btn sweet-success">Sweet Success</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        
              
                     </div>
+                    
                               <Link to={"/tutorials/" + tutorial.id} class="dropdown-item">Accept Patient</Link>
-                              <Link to={"/viewAdmin"+ tutorial.id} class="dropdown-item">View Details</Link>
+                              <Link to={"/ViewAdmin"+ tutorial.id} class="dropdown-item">View Details</Link>
 															</div>
 														</div>												
                             </td>		

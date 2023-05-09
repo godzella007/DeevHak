@@ -19,11 +19,12 @@ import { logout } from "./app/slices/auth";
 
 import EventBus from "./app/common/EventBus";
 import EditProfile from "./app/components/EditProfile";
-import FormolairAcces from "./app/components/FormolairAcces";
+
 import ListeAdmin from "./app/components/listeAdmin";
 import Quiz from "./app/components/Quiz";
-
-
+import Back from "./app/components/back";
+import ViewAdmin from "./app/components/ViewAdmin";
+import Formulair from "./app/components/formulair";
 function App() {
   const [showModeratorBoard, setShowModeratorBoard] = useState(false);
   const [showAdminBoard, setShowAdminBoard] = useState(false);
@@ -59,12 +60,14 @@ function App() {
   return (
    
     <Router>
+      <div id="preloader">
+		<div class="lds-ripple">
+			<div></div>
+			<div></div>
+		</div>
+    </div>
     <div id="main-wrapper">
     <div className="nav-header">
-      <a href="index.html" className="brand-logo">
-      
-      </a>
-      
       <div className="nav-control">
         <div className="hamburger">
           <span className="line"></span>
@@ -131,7 +134,11 @@ function App() {
                                      <div className="header-info2 d-flex align-items-center">
                                        
                                        <div className="header-info">
-                                         <h6>Account</h6>
+                                      
+                                       <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+  <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+  <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
+</svg>
                                        </div>
                                      </div>
                                    </a>
@@ -184,7 +191,7 @@ function App() {
 
   
       <Routes>
-            <Route path="/" element={<Login />} />
+            <Route path="/" element={<Back/>} />
             <Route path="/home" element={<Home />} />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
@@ -199,9 +206,12 @@ function App() {
             <Route path="/RestPassword" element={<RestPassword/>} />
             <Route path="/EditProfile" element={<EditProfile/>} />
             <Route path="/hackathons" element={<Hackathons/>} />
-            <Route path="/FormolairAcces" element={<FormolairAcces/>} />
+            <Route path="/ViewAdmin" element={<ViewAdmin/>} />
             <Route path="/listeAdmin" element={<ListeAdmin/>} />
             <Route path="/Quiz" element={<Quiz/>} />
+            <Route path="/back" element={<Back/>} />
+            <Route path="/formulair" element={<Formulair/>} />
+            
             </Routes>
             </div>
       </Router>
