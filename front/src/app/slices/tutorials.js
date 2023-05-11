@@ -1,5 +1,6 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import TutorialDataService from "../services/tutorial.service";
+import QuizDataService from "../services/quiz.service";
 
 const initialState = [];
 
@@ -31,6 +32,13 @@ export const deleteTutorial = createAsyncThunk(
   "tutorials/delete",
   async ({ id }) => {
     await TutorialDataService.delete(id);
+    return { id };
+  }
+);
+export const deleteQuiz = createAsyncThunk(
+  "quizzes/delete",
+  async ({ id }) => {
+    await QuizDataService.delete(id);
     return { id };
   }
 );

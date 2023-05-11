@@ -1,9 +1,5 @@
 
 import React, { Component } from "react";
-import Grid from '@mui/material/Grid';
-import Paper from '@mui/material/Paper';
-import Typography from '@mui/material/Typography';
-import ButtonBase from '@mui/material/ButtonBase';
 import { connect } from "react-redux";
 import { styled } from '@mui/material/styles';
 import {
@@ -74,7 +70,7 @@ class Hackathons extends Component {
   }
 
   render() {
-    const { searchTitle, currentTutorial, currentIndex } = this.state;
+   
     const { tutorials } = this.props;
     const Img = styled('img')({
       margin: 'auto',
@@ -83,63 +79,38 @@ class Hackathons extends Component {
       maxHeight: '100%',
     });
     return (
+     
       <div className="content-body">
-        <div class="container-fluid">
-      <Paper
-      sx={{
-        p: 2,
-        margin: 'auto',
-        maxWidth: 500,
-        flexGrow: 1,
-        backgroundColor: (theme) =>
-          theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
-      }}
-    >
-      {tutorials &&
+    
+  
+            <div className="container-fluid">  
+  <div className="row ">
+
+  {tutorials &&
               tutorials.map((tutorial) => (
-      <Grid container spacing={2}>
-        <Grid item>
-          <ButtonBase sx={{ width: 128, height: 128 }}>
-            <Img alt="complex" src="/images/card/2.png" />
-          </ButtonBase>
-        </Grid>
-        <td> </td>
-															
-																<td>{tutorial.Numbre_Equipe}</td>
-                              
-                                
-        <Grid item xs={12} sm container>
-          <Grid item xs container direction="column" spacing={2}>
-            <Grid item xs>
-              <Typography gutterBottom variant="subtitle1" component="div">
-              {tutorial.title}
-              </Typography>
-              <Typography variant="body2" gutterBottom>
-              {tutorial.NomEntriprise}
-              </Typography>
-              <Typography variant="body2" color="text.secondary">
-              {tutorial.description}
-              </Typography>
-            </Grid>
-            <Grid item>
-              <Typography sx={{ cursor: 'pointer' }} variant="body2">
-              <Link to={"/formulair"}  className="dropdown-item ai-icon">
-													
-                         ouvrir
-   
-                         </Link>
-              </Typography>
-            </Grid>
-          </Grid>
-          <Grid item>
-            <Typography variant="subtitle1" component="div">
-            {tutorial.Date_début}
-             {tutorial.Date_fin}
-            </Typography>
-          </Grid>
-        </Grid>
-      </Grid>	  ))}
-    </Paper></div></div>
+  <div className="col-xl-3 col-sm-6">
+						<div className="card box-hover ">
+							<div className="card-header">
+              <span>Title de Projet</span>	
+              <h5 className="text-primary mb-0 mt-1 text-end" >{tutorial.title}</h5>
+							</div>
+							<div className="card-body">
+							
+								
+										<span className="mb-2">NomEntriprise:</span>	
+                    <h6 className="text-end">{tutorial.NomEntriprise}</h6>
+							
+								
+							</div>
+							<div className="card-footer d-flex justify-content-between flex-wrap">
+								<Link to={"/formulair"}>
+								<button className="my-3"  >Ouvrir</button></Link>
+							</div>
+						</div>
+					</div>
+            ))}
+            
+    </div></div></div>
  );
 }
 

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import quizService from "../services/quiz.service";
-function Quiz() {
+function QuizList() {
   const [quizzes, setQuizzes] = useState([]);
   useEffect(() => {
    quizService.getAll()
@@ -53,4 +53,4 @@ function Quiz() {
   );
 }
 
-export default Quiz;
+export default QuizList;

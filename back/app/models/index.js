@@ -6,6 +6,7 @@ db.mongoose = mongoose;
 db.ROLES = ["user", "admin", "moderator"];
 db.url = dbConfig.url;
 db.tutorials = require("./tutorial.model.js")(mongoose);
+db.quizzes = require("./quiz.model.js")(mongoose);
 db.user = require("./user.model");
 db.role = require("./role.model");
 module.exports = db;

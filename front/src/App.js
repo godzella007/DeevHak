@@ -1,8 +1,9 @@
 import React, { useState, useEffect, useCallback } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
-
-
+import AfficheQuiz from "./app/components/afficheQuiz";
+import QuizList from "./app/components/QuizList";
+import CreateQuiz from "./app/components/CreateQuiz";
 import RestPassword from "./app/components/ResetPassword"
 import Login from "./app/components/Login";
 import Register from "./app/components/Register";
@@ -211,6 +212,9 @@ function App() {
             <Route path="/Quiz" element={<Quiz/>} />
             <Route path="/back" element={<Back/>} />
             <Route path="/formulair" element={<Formulair/>} />
+            <Route path="/QuizList" element={<QuizList/>} />
+           <Route path="/create" element={<CreateQuiz/>} />
+           <Route path="/afficheQuiz" element={<AfficheQuiz/>}/>
             
             </Routes>
             </div>

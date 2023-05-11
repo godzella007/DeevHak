@@ -30,7 +30,7 @@ db.mongoose
     initial();
   })
   .catch(err => {
-    console.error("Connection error", err);
+   console.error("Connection error", err);
     process.exit();
   });
 
@@ -40,6 +40,7 @@ app.get("/", (req, res) => {
 });
 
 // routes
+require("./app/routes/Quiz.routes")(app);
 require("./app/routes/auth.routes")(app);
 require("./app/routes/user.routes")(app);
 require("./app/routes/turorial.routes")(app);
