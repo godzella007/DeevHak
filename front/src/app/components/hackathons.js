@@ -1,7 +1,7 @@
 
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { styled } from '@mui/material/styles';
+
 import {
   retrieveTutorials,
   findTutorialsByTitle,
@@ -72,12 +72,7 @@ class Hackathons extends Component {
   render() {
    
     const { tutorials } = this.props;
-    const Img = styled('img')({
-      margin: 'auto',
-      display: 'block',
-      maxWidth: '100%',
-      maxHeight: '100%',
-    });
+   
     return (
      
       <div className="content-body">

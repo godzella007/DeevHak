@@ -31,7 +31,7 @@ function CreateQuiz() {
     };
 
     quizService.create(quizData)
-      .then((res) => alert('khali ygoulou ach yhem'))
+      .then((res) => alert('Quiz créé avec succès'))
       .catch((err) => console.log(err));
 
     setQuestion("");

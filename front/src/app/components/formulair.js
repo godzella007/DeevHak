@@ -89,7 +89,7 @@ class Formulair extends Component {
   }
 
   render() {
-    const { searchTitle } = this.state;
+   
     const { tutorials } = this.props;
 
     return (
@@ -97,11 +97,11 @@ class Formulair extends Component {
  <div className="content-body">
     <div className="container-fluid">
   
-        <div className="row gx-0">
+        <div className="row ">
             <div className="col-xl-12">
                 <div className="card h-auto">
                     <div className="card-body py-0">
-                       <div className="row gx-0">
+                       <div className="row ">
                             
                             <div className="col-lg-10 col-xxl-9">
                                 <div className="email-right-box">
@@ -109,7 +109,7 @@ class Formulair extends Component {
               tutorials.map((tutorial) => (
                                     <div className="row">
                                         <div className="col-12">
-                                            <div className="right-box-padding p-0">
+                                            <div className="right-box-padding p-12">
                                                 <div className="read-wapper dz-scroll" id="read-content">
                                                     <div className="read-content">
                                                         <div className="media pt-3 d-sm-flex d-block justify-content-between">

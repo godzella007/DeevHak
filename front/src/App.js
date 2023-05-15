@@ -23,7 +23,6 @@ import EditProfile from "./app/components/EditProfile";
 
 import ListeAdmin from "./app/components/listeAdmin";
 import Quiz from "./app/components/Quiz";
-import Back from "./app/components/back";
 import ViewAdmin from "./app/components/ViewAdmin";
 import Formulair from "./app/components/formulair";
 function App() {
@@ -192,7 +191,7 @@ function App() {
 
   
       <Routes>
-            <Route path="/" element={<Back/>} />
+            <Route path="/" element={<Login/>} />
             <Route path="/home" element={<Home />} />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
@@ -210,7 +209,6 @@ function App() {
             <Route path="/ViewAdmin" element={<ViewAdmin/>} />
             <Route path="/listeAdmin" element={<ListeAdmin/>} />
             <Route path="/Quiz" element={<Quiz/>} />
-            <Route path="/back" element={<Back/>} />
             <Route path="/formulair" element={<Formulair/>} />
             <Route path="/QuizList" element={<QuizList/>} />
            <Route path="/create" element={<CreateQuiz/>} />
