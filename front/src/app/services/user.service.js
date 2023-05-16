@@ -15,12 +15,16 @@ const getModeratorBoard = () => {
 const getAdminBoard = () => {
   return http.get("/test/admin");
 };
+const verfieremail = (data) => {
+  return http.post("/test/verfieremail",data);
+};
 
 const UserService = {
   getPublicContent,
   getUserBoard,
   getModeratorBoard,
   getAdminBoard,
+  verfieremail,
 }
 
 export default UserService;

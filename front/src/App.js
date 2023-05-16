@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useCallback } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
-import AfficheQuiz from "./app/components/afficheQuiz";
 import QuizList from "./app/components/QuizList";
 import CreateQuiz from "./app/components/CreateQuiz";
 import RestPassword from "./app/components/ResetPassword"
@@ -25,11 +24,12 @@ import ListeAdmin from "./app/components/listeAdmin";
 import Quiz from "./app/components/Quiz";
 import ViewAdmin from "./app/components/ViewAdmin";
 import Formulair from "./app/components/formulair";
+import EmailVerification from "./app/components/EmailVerification";
 function App() {
   const [showModeratorBoard, setShowModeratorBoard] = useState(false);
   const [showAdminBoard, setShowAdminBoard] = useState(false);
   const [showUserBoard, setShowUserBoard] = useState(false);
-  const [infoProfil, setInfoProfil] = useState();
+  
   const { user: currentUser } = useSelector((state) => state.auth);
   const dispatch = useDispatch();
 //useeffect appel userService.get(currenetUser.id) setProfil(res.data)
@@ -212,7 +212,7 @@ function App() {
             <Route path="/formulair" element={<Formulair/>} />
             <Route path="/QuizList" element={<QuizList/>} />
            <Route path="/create" element={<CreateQuiz/>} />
-           <Route path="/afficheQuiz" element={<AfficheQuiz/>}/>
+           <Route path="/EmailVerification" element={<EmailVerification/>}/>
             
             </Routes>
             </div>

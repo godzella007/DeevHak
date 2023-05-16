@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Formik, Field, Form, ErrorMessage } from "formik";
 import * as Yup from "yup";
-
+import UserService from "../services/user.service";
 import { register } from "../slices/auth";
 import { clearMessage } from "../slices/message";
 
@@ -21,6 +21,7 @@ const Register = () => {
     email: "",
     password: "",
     profil:"",
+    verificationCode:"",
   };
 
   const validationSchema = Yup.object().shape({
@@ -48,13 +49,30 @@ const Register = () => {
   const handleRegister = (formValue) => {
     const { username, email, password,profil } = formValue;
 const roles = [profil]
-
+const verificationCode = Date.now()
     setSuccessful(false);
 
-    dispatch(register({ username, email, password,roles }))
+    dispatch(register({ username, email, password,roles,verificationCode }))
       .unwrap()
       .then(() => {
-        setSuccessful(true);
+        //mail (to, text "ujnkhhgjk ")
+       const dataemail={  
+      name: username,
+        email:email,
+        code:verificationCode,
+        lien:"http://localhost:8080/EmailVerification",
+        }
+        UserService.verfieremail(dataemail).then(
+          (res)=>{
+           
+           setSuccessful(true);
+          }
+        ).catch(
+          ()=>{
+            setSuccessful(false);
+          }
+        )
+       
       })
       .catch(() => {
         setSuccessful(false);
@@ -161,7 +179,6 @@ const roles = [profil]
                     <label htmlFor="Profil">Profil</label>
                     <Field as="select" name="profil" className="form-select">
                     <option selected>choisir un Roles</option>
-                    <option value="admin">Admin</option>
                     <option value="moderator">Enterprise</option>
                     <option value="user">Participant</option>
            

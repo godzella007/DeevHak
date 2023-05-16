@@ -48,7 +48,7 @@ const BoardModerator = () => {
         </Link>
         </li>
         
-<li><Link to={"/tutorials"} className="nav-link">
+<li><Link to={"/EmailVerification"} className="nav-link">
 
             <div className="menu-icon">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">

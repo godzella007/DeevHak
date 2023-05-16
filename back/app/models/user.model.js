@@ -11,9 +11,17 @@ const User = mongoose.model(
         type: mongoose.Schema.Types.ObjectId,
         ref: "Role"
       }
-    ]
-    
-   
+    ],
+    state: {
+      type: String,
+      enum: ["pending", "active", "disabled"],
+      default: "pending"
+    },
+    verificationCode: {
+      type: String,
+      unique: true,
+      sparse: true
+    }
   })
 );
 

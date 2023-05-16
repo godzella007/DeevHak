@@ -87,7 +87,7 @@ const BoardAdmin = () => {
         <ul >
                 <li><Link to={"/create"} className="nav-link">Create Quiz</Link></li>
                 <li><Link to={"/QuizList"} className="nav-link">Liste Quiz</Link></li>
-                <li><Link to={"/afficheQuiz"} className="nav-link">Reponse</Link></li>
+                <li><Link to={"/Quiz"} className="nav-link">Reponse</Link></li>
             </ul>
         </li>
     </ul>
