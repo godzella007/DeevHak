@@ -5,7 +5,6 @@ import {
   findTutorialsByTitle,
   deleteAllTutorials,
 } from "../slices/tutorials";
-import { Link } from "react-router-dom";
 
 class ViewAdmin extends Component {
   constructor(props) {

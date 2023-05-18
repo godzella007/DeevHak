@@ -20,8 +20,8 @@ const Register = () => {
     username: "",
     email: "",
     password: "",
-    profil:"",
-    verificationCode:"",
+    profil: "",
+    verificationCode: "", 
   };
 
   const validationSchema = Yup.object().shape({
@@ -54,13 +54,16 @@ const verificationCode = Date.now()
 
     dispatch(register({ username, email, password,roles,verificationCode }))
       .unwrap()
-      .then(() => {
+      .then((res) => {
+        console.log('idddddddddddddddddddddddddddd')
+        console.log(res._id)
+        console.log('idddddddddddddddddddddddddddd')
         //mail (to, text "ujnkhhgjk ")
        const dataemail={  
       name: username,
         email:email,
         code:verificationCode,
-        lien:"http://localhost:8080/EmailVerification",
+        lien:"http://localhost:8081/emailverification/" + res._id,
         }
         UserService.verfieremail(dataemail).then(
           (res)=>{
@@ -113,9 +116,9 @@ const verificationCode = Date.now()
               
  </div> 
  <Formik
-          initialValues={initialValues}
-          validationSchema={validationSchema}
-          onSubmit={handleRegister}
+           initialValues={initialValues}
+           validationSchema={validationSchema}
+           onSubmit={(values) => handleRegister(values)}
         >
           {({ errors, touched }) => (
             <Form>
@@ -180,6 +183,7 @@ const verificationCode = Date.now()
                     <Field as="select" name="profil" className="form-select">
                     <option selected>choisir un Roles</option>
                     <option value="moderator">Enterprise</option>
+                    <option value="admin">Admin</option>
                     <option value="user">Participant</option>
            
            </Field>

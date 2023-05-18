@@ -28,4 +28,8 @@ module.exports = function(app) {
   app.post(
     "/api/test/verfieremail",controller.verfieremail
   );
+  app.get(
+    "/api/test/info/:id",controller.findOne
+  );
+  app.put("api/test/update/:id",controller.update);
 };

@@ -97,8 +97,8 @@ class TutorialsList extends Component {
       <div className="content-body">
         	<div className="page-titles">
 					<ol className="breadcrumb">
-						<li className=""><a href="">Hacktons --- /</a></li>
-						<li className="breadcrumb-item active"><a href="">list</a></li>
+						<li className=""><a href=";">Hacktons --- /</a></li>
+						<li className="breadcrumb-item active"><a href=";">list</a></li>
 					</ol>
                 </div>
  <div className="container-fluid">   

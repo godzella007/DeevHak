@@ -114,7 +114,8 @@ class Formulair extends Component {
                                                     <div className="read-content">
                                                         <div className="media pt-3 d-sm-flex d-block justify-content-between">
                                                             <div className="clearfix mb-3 d-flex">
-                                                                <img className="me-3 rounded" width="70" height="70" alt="image" src="DH.png"/>
+                                                            <img className="me-3 rounded" width="70" height="70" alt="Company Logo" src="DH.png" />
+
                                                                 <div className="media-body me-2">
                                                                     <h5 className="text-primary mb-0 mt-1">{tutorial.NomEntriprise}</h5>
                                                                     <p className="mb-0">NomEntriprise</p>

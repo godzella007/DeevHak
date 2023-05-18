@@ -37,8 +37,8 @@ exports.signup = (req, res) => {
               res.status(500).send({ message: err });
               return;
             }
-
-            res.send({ message: "User was registered successfully!" });
+           
+          
           });
         }
       );
@@ -50,6 +50,7 @@ exports.signup = (req, res) => {
         }
 
         user.roles = [role._id];
+        
         user.save(err => {
           if (err) {
             res.status(500).send({ message: err });
@@ -58,6 +59,8 @@ exports.signup = (req, res) => {
         });
       });
     }
+
+    res.send(user);
   });
 };
 

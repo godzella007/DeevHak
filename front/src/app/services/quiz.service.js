@@ -29,4 +29,5 @@ class QuizDataService {
     return http.get(`/qui?title=${title}`);
   }
 }
-export default new QuizDataService();
+const quizDataService = new QuizDataService();
+export default quizDataService;

@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from "react";
 import UserService from "../services/user.service";
 import tutorialService from "../services/tutorial.service";
-
+import quizService from "../services/quiz.service";
 const Home = () => { 
   const [count,setCount] = useState(0); 
   const [tutorials,setTutorials,tutorial] = useState({});
-  const [use,setuse] = useState(0); 
-  const [ User,setusers] = useState({});
-  
+  const [use,setUse] = useState(0); 
+  const [ user,setusers] = useState({});
+  const [ quizz,setquizs] = useState({});
+  const [quiz,setQuiz] = useState(0); 
   useEffect(() => {
     tutorialService.getAll()
       .then((res) => {
@@ -20,14 +21,23 @@ const Home = () => {
       }).catch((err)=>{console.log(err)})
   }, []);
   useEffect(() => {
-    UserService.getPublicContent()
+    quizService.getAll()
       .then((res) => {
         console.log('--------------------------------')
         console.log(res.data.length)
         console.log('--------------------------------')
+        setquizs(res.data);
+        console.log(res.data.length);
+        setQuiz(res.data.length)
+      }).catch((err)=>{console.log(err)})
+  }, []);
+  useEffect(() => {
+    UserService.getPublicContent("/test/all")
+      .then((res) => {
+        console.log(res.data.length)
         setusers(res.data);
         console.log(res.data.length);
-        setuse(res.data.length)
+        setUse(res.data.length)
       }).catch((err)=>{console.log(err)})
   }, []);
 
@@ -36,8 +46,8 @@ const Home = () => {
     <div className="content-body">
     <div className="page-titles">
     <ol className="breadcrumb">
-      <li className=""><a href="">Home /</a></li>
-      <li className="breadcrumb-item active"><a href="">Projet</a></li>
+      <li className=""><a href=";">Home /</a></li>
+      <li className="breadcrumb-item active"><a href=";">Projet</a></li>
     </ol>
           </div>
 
@@ -85,14 +95,13 @@ const Home = () => {
       <div className="card-body">
         <div className="d-flex align-items-center">
           <div className="icon-box icon-box-lg bg-purple-light rounded-circle">
-            <svg width="46" height="46" viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path fill-rule="evenodd" clip-rule="evenodd" d="M22.9717 41.0539C22.9717 41.0539 37.3567 36.6983 37.3567 24.6908C37.3567 12.6814 37.878 11.7439 36.723 10.5889C35.5699 9.43391 24.858 5.69891 22.9717 5.69891C21.0855 5.69891 10.3736 9.43391 9.21863 10.5889C8.0655 11.7439 8.58675 12.6814 8.58675 24.6908C8.58675 36.6983 22.9717 41.0539 22.9717 41.0539Z" stroke="#BB6BD9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              <path d="M26.4945 26.4642L19.4482 19.4179" stroke="#BB6BD9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              <path d="M19.4487 26.4642L26.495 19.4179" stroke="#BB6BD9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-question-circle" viewBox="0 0 16 16">
+<path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+<path d="M5.255 5.786a.237.237 0 0 0 .241.247h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286zm1.557 5.763c0 .533.425.927 1.01.927.609 0 1.028-.394 1.028-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94z"/>
+</svg>
           </div>
           <div className="total-projects ms-3">
-            <h3 className="text-purple count">07</h3> 
+            <h3 className="text-purple count">{quiz}</h3> 
             <span>Total Qiuz</span>
           </div>
         </div>
