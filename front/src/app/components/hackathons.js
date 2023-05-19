@@ -99,7 +99,7 @@ class Hackathons extends Component {
 							</div>
 							<div className="card-footer d-flex justify-content-between flex-wrap">
 								<Link to={"/formulair"}>
-								<button className="my-3"  >Ouvrir</button></Link>
+								<button className="btn btn-primary"  >Ouvrir</button></Link>
 							</div>
 						</div>
 					</div>

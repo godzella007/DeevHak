@@ -166,19 +166,19 @@ class ListeAdmin extends Component {
                             <td>{tutorial.Date_fin}</td>
                             <td>{tutorial.Rules}</td>
                             <td>
-                              <div class="dropdown ms-auto text-end c-pointer">
-															<div class="btn-link" data-bs-toggle="dropdown">
-																<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect x="0" y="0" width="24" height="24"></rect><circle fill="#000000" cx="5" cy="12" r="2"></circle><circle fill="#000000" cx="12" cy="12" r="2"></circle><circle fill="#000000" cx="19" cy="12" r="2"></circle></g></svg>
+                              <div className="dropdown ms-auto text-end c-pointer">
+															<div className="btn-link" data-bs-toggle="dropdown">
+																<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1"><g stroke="none" stroke-width="1" fill="none" fillRule="evenodd"><rect x="0" y="0" width="24" height="24"></rect><circle fill="#000000" cx="5" cy="12" r="2"></circle><circle fill="#000000" cx="12" cy="12" r="2"></circle><circle fill="#000000" cx="19" cy="12" r="2"></circle></g></svg>
 															</div>
-															<div class="dropdown-menu dropdown-menu-end">
-                              <div class="col-xl-3 col-xxl-4 col-lg-4 col-md-6">
+															<div className="dropdown-menu dropdown-menu-end">
+                              <div className="col-xl-3 col-xxl-4 col-lg-4 col-md-6">
                         
              
                     </div>
                     
-                              <Link to={"/tutorials/" + tutorial.id} class="dropdown-item">Accept Patient</Link>
-                              <Link to={"/formulair"} class="dropdown-item">View Details</Link>
-                              <Link  onClick={()=>{this.removeTutorial(tutorial.id)}} class="dropdown-item" >Supprime</Link>
+                              <Link to={"/tutorials/" + tutorial.id} className="dropdown-item">Accept Patient</Link>
+                              <Link to={"/formulair"} className="dropdown-item">View Details</Link>
+                              <Link  onClick={()=>{this.removeTutorial(tutorial.id)}} className="dropdown-item" >Supprime</Link>
 																
 															</div>
 														</div>												

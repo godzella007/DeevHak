@@ -12,38 +12,38 @@ const EditProfile  = () => {
   return (
     <>
 <div className="content-body">
-<div class="container-fluid">
+<div className="container-fluid">
         <div className="row">
-        <div class="col-xl-9 col-lg-8">
-						<div class="card profile-card card-bx m-b30">
-							<div class="card-header">
-								<h6 class="title">Update Account </h6>
+        <div className="col-xl-9 col-lg-8">
+						<div className="card profile-card card-bx m-b30">
+							<div className="card-header">
+								<h6 className="title">Update Account </h6>
 							</div>
-							<form class="profile-form">
-								<div class="card-body">
-									<div class="row">
-										<div class="col-sm-6 m-b30">
-											<label class="form-label">Name</label>
-											<input type="text" class="form-control" value={currentUser.username}/>
+							<form className="profile-form">
+								<div className="card-body">
+									<div className="row">
+										<div className="col-sm-6 m-b30">
+											<label className="form-label">Name</label>
+											<input type="text" className="form-control" value={currentUser.username}/>
 										</div>
-										<div class="col-sm-6 m-b30">
-											<label class="form-label">Surname</label>
-                      <select class="default-select form-control" id="validationCustom05" value={currentUser.roles }>
+										<div className="col-sm-6 m-b30">
+											<label className="form-label">Surname</label>
+                      <select className="default-select form-control" id="validationCustom05" value={currentUser.roles }>
 												<option  data-display="Select">Please select</option>
 												<option value="html">Particpant</option>
 												<option value="css">Entriprise</option>
 												<option value="javascript">Admin</option>
 											</select>
 										</div>
-										<div class="col-sm-6 m-b30">
-											<label class="form-label">Email address</label>
-											<input type="text" class="form-control" value={currentUser.email} />
+										<div className="col-sm-6 m-b30">
+											<label className="form-label">Email address</label>
+											<input type="text" className="form-control" value={currentUser.email} />
 										</div>
 									</div>
 								</div>
-								<div class="card-footer">
-									<button class="btn btn-primary">UPDATE</button>
-									<a href="page-register.html" class="btn-link">Forgot your password?</a>
+								<div className="card-footer">
+									<button className="btn btn-primary">UPDATE</button>
+									<a href="page-register.html" className="btn-link">Forgot your password?</a>
 								</div>
 							</form>
 						</div>

@@ -75,10 +75,10 @@ function CreateQuiz() {
             </button>
           </div>
         ))}
-         <div class="row">
-                                            <div class="mb-3 col-md-6">
+         <div className="row">
+                                            <div className="mb-3 col-md-6">
         <button
-          type="button" class="btn btn-success"
+          type="button" className="btn btn-success"
           onClick={handleAddOption}
           variant="danger"
         >

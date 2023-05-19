@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import QuizList from "./app/components/QuizList";
 import CreateQuiz from "./app/components/CreateQuiz";
-import RestPassword from "./app/components/ResetPassword"
+import Viewhackathon from "./app/components/viewhackathon"
 import Login from "./app/components/Login";
 import Register from "./app/components/Register";
 import Home from "./app/components/Home";
@@ -135,7 +135,7 @@ function App() {
                                        
                                        <div className="header-info">
                                       
-                                       <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" className="bi bi-person-circle" viewBox="0 0 16 16">
+                                       <svg xmlns="http://www.w3.org/2000/svg" width="26px" height="26px" fill="currentColor" className="bi bi-person-circle" viewBox="0 0 16 16">
   <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
   <path fillRule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
 </svg>
@@ -203,7 +203,6 @@ function App() {
             <Route path="/tutorials" element={<TutorialsList/>} />
             <Route path="/add" element={<AddTutorial/>} />
             <Route path="/tutorials/:id" element={<Tutorial/>} />
-            <Route path="/RestPassword" element={<RestPassword/>} />
             <Route path="/EditProfile" element={<EditProfile/>} />
             <Route path="/hackathons" element={<Hackathons/>} />
             <Route path="/ViewAdmin" element={<ViewAdmin/>} />
@@ -213,6 +212,7 @@ function App() {
             <Route path="/QuizList" element={<QuizList/>} />
            <Route path="/create" element={<CreateQuiz/>} />
            <Route path="/emailverification/:id" element={<EmailVerification/>}/>
+           <Route path="/viewhackathon" element={<Viewhackathon/>}/>
             
             </Routes>
             </div>

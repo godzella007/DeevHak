@@ -98,8 +98,9 @@ class Formulair extends Component {
     <div className="container-fluid">
   
         <div className="row ">
-            <div className="col-xl-12">
-                <div className="card h-auto">
+            <div className="col-xl-15">
+              
+            <div className="card box-hover ">
                     <div className="card-body py-0">
                        <div className="row ">
                             
@@ -148,6 +149,7 @@ class Formulair extends Component {
                                                     <div className="text-end">
                                                         <Link to={"/back"}>
                                                         <button className="btn btn-primary " type="button">Send</button></Link>
+                                                        
                                                     </div>
                                                 </div>
                                             </div>

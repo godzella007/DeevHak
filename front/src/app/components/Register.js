@@ -183,7 +183,6 @@ const verificationCode = Date.now()
                     <Field as="select" name="profil" className="form-select">
                     <option selected>choisir un Roles</option>
                     <option value="moderator">Enterprise</option>
-                    <option value="admin">Admin</option>
                     <option value="user">Participant</option>
            
            </Field>
