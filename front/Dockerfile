@@ -9,7 +9,7 @@ COPY package*.json ./
 
 # Install npm dependencies with legacy peer deps
 RUN npm cache clear --force
-RUN npm install 
+RUN npm install --force
 
 # Copy the current directory contents into the container at /usr/src/app
 COPY . .
